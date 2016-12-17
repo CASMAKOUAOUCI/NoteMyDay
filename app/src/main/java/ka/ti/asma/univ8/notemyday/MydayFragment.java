@@ -41,7 +41,7 @@ public class MydayFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        Intent intent = new Intent(getContext(), criteriaActivity.class);
+        Intent intent = new Intent(getContext(), CriteriaDayActivity.class);
         startActivity(intent);
     }
 }
