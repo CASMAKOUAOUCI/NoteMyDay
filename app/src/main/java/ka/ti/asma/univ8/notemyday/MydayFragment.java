@@ -1,25 +1,25 @@
 package ka.ti.asma.univ8.notemyday;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link ListFragment} subclass.
  */
-public class MydayFragment extends Fragment {
-
+public class MydayFragment extends ListFragment {
 
     public MydayFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,17 +29,19 @@ public class MydayFragment extends Fragment {
 
         String[] elements = {"Santé","Culture","sport"}; // initializer une liste statique
 
-        ListView listView = (ListView) view.findViewById(R.id.listView_fragment_myday); // récupérer la listView du layout
-
         // créer l'adapteur pour la listeView
         ArrayAdapter<String> listViewAdapter =  new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
                 elements
         );
-        listView.setAdapter(listViewAdapter); //setter l'adapteur a la listeView
-
+        setListAdapter(listViewAdapter); //setter l'adapteur a la listeView
         return view;
     }
 
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        Intent intent = new Intent(getContext(), criteriaActivity.class);
+        startActivity(intent);
+    }
 }
