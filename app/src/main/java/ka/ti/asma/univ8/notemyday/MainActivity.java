@@ -80,13 +80,18 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+        // Initialisation du fragment manager
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         if (id == R.id.nav_fragment_myday) {
+            // Affichage du fragment MydayFragment
             fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();
         } else if (id == R.id.nav_fragment_days_history) {
+            // Affichage du fragment DaysHistory
             fragmentManager.beginTransaction().replace(R.id.content_frame, new DaysHistory()).commit();
         } else if (id == R.id.nav_fragment_graphe) {
+            // Affichage du fragment GrapheFragment
             fragmentManager.beginTransaction().replace(R.id.content_frame, new GrapheFragment()).commit();
         }
 
