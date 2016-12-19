@@ -3,6 +3,7 @@ package ka.ti.asma.univ8.notemyday.model;
 import android.content.ContentValues;
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.Date;
 
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
@@ -29,7 +30,12 @@ public class Day implements Serializable {
         this.dateString = helperDate.dateFormatString(date);
     }
 
-    public Date getDate() {
+    public Date getDate()  {
+
+        if (date == null)
+        {
+           return helperDate.dateFromString(dateString);
+        }
         return date;
     }
 
@@ -47,6 +53,10 @@ public class Day implements Serializable {
         ContentValues values = new ContentValues();
         values.put(DBHelper.COLUMN_DAY_ID, getDateString());
         return values;
+    }
+
+    public String toString() {
+        return helperDate.dateLongFormatString(getDate());
     }
 
 }
