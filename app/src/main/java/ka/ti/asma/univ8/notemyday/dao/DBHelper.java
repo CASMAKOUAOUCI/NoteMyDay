@@ -14,7 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // columns of the Days table
     public static final String TABLE_DAYS = "days";
-    public static final String COLUMN_DAY_ID = "dateDay";
+    public static final String COLUMN_DAY_ID = "DATEDAYKEY";
 
     // columns of the CriteriaDay table
     public static final String TABLE_CRITERIADAY = "CriteriaDay";
@@ -24,23 +24,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_CRITERIADAY_RATING = "rating";
     public static final String COLUMN_CRITERIADAY_DAY_ID = "dateDay";
 
-    private static final String DATABASE_NAME = "companies.db";
+    private static final String DATABASE_NAME = "days.db";
     private static final int DATABASE_VERSION = 1;
 
     // SQL statement of the creteriaDay table creation
-    private static final String SQL_CREATE_TABLE_CRITERIADA = "CREATE TABLE " + TABLE_CRITERIADAY + "("
-            + COLUMN_CRITERIADAY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_CRITERIADAY_NAME + " TEXT NOT NULL, "
-            + COLUMN_CRITERIADAY_DESCRIPTION + " TEXT NOT NULL, "
-            + COLUMN_CRITERIADAY_RATING + " REAL NOT NULL, "
-            + COLUMN_CRITERIADAY_DAY_ID + " TEXT NOT NULL, "
-            +");";
+    private static final String SQL_CREATE_TABLE_CRITERIADA = "CREATE TABLE " + TABLE_CRITERIADAY + "("+ COLUMN_CRITERIADAY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+ COLUMN_CRITERIADAY_NAME + " TEXT NOT NULL, "+ COLUMN_CRITERIADAY_DESCRIPTION + " TEXT NOT NULL, "+ COLUMN_CRITERIADAY_RATING + " REAL NOT NULL, "+ COLUMN_CRITERIADAY_DAY_ID + " TEXT NOT NULL "+");";
 
     // SQL statement of the days table creation
-    private static final String SQL_CREATE_TABLE_DAYS = "CREATE TABLE " + TABLE_DAYS + "("
-            + COLUMN_DAY_ID + " TEXT PRIMARY KEY, "
-            +");";
-
+    private static final String SQL_CREATE_TABLE_DAYS = "CREATE TABLE "+ TABLE_DAYS + "("+ COLUMN_DAY_ID + " TEXT PRIMARY KEY "+");";
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -63,7 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+    public DBHelper(Context context, String name, int version) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 }

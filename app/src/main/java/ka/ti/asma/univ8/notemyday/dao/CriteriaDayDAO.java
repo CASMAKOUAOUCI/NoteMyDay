@@ -51,26 +51,19 @@ public class CriteriaDayDAO {
         mDbHelper.close();
     }
 
-    public CriteriaDay createCriteriaDay(String name,
-                                         Integer criteriaDayID,
-                                         String dateDay,
-                                     String description,
-                                     float rating) {
-        ContentValues values = new ContentValues();
-        values.put(DBHelper.COLUMN_CRITERIADAY_NAME, name);
-        values.put(DBHelper.COLUMN_CRITERIADAY_DESCRIPTION, description);
-        values.put(DBHelper.COLUMN_CRITERIADAY_ID, criteriaDayID);
-        values.put(DBHelper.COLUMN_CRITERIADAY_DAY_ID, dateDay);
-        values.put(DBHelper.COLUMN_CRITERIADAY_RATING, rating);
+    public void createCriteriaDay(CriteriaDay criteriaDay) {
+
+        System.out.println("insert criteria has the criteriaDay: " + criteriaDay.contentValue());
+
         long insertId = mDatabase
-                .insert(DBHelper.TABLE_CRITERIADAY, null, values);
+                .insert(DBHelper.TABLE_CRITERIADAY, null, criteriaDay.contentValue());
+
         Cursor cursor = mDatabase.query(DBHelper.TABLE_CRITERIADAY, mAllColumns,
                 DBHelper.COLUMN_CRITERIADAY_ID + " = " + insertId, null, null,
                 null, null);
-        cursor.moveToFirst();
-        CriteriaDay criteriaDay = cursorToCriteriaDay(cursor);
+        if (cursor.moveToFirst())
+            cursorToCriteriaDay(cursor);
         cursor.close();
-        return criteriaDay;
     }
 
     public List<CriteriaDay> getCriteriaDayOfDay(String id) {
@@ -91,11 +84,29 @@ public class CriteriaDayDAO {
         return listCriteriaDay;
     }
 
+    public void insertCriteriaDay(CriteriaDay criteriaDay) {
+        long id = criteriaDay.getId();
+        System.out.println("the inserted criteria has the id: " + id);
+        mDatabase.insert(DBHelper.TABLE_CRITERIADAY,null,criteriaDay.contentValue());
+    }
+
     public void deleteCriteriaDay(CriteriaDay criteriaDay) {
         long id = criteriaDay.getId();
         System.out.println("the deleted criteria has the id: " + id);
         mDatabase.delete(DBHelper.TABLE_CRITERIADAY, DBHelper.COLUMN_CRITERIADAY_ID
                 + " = " + id, null);
+    }
+
+    public CriteriaDay updateCriteriaDay(CriteriaDay criteriaDay) {
+        long insertId = mDatabase
+                .update(DBHelper.TABLE_CRITERIADAY, criteriaDay.contentValue(), null,null);
+        Cursor cursor = mDatabase.query(DBHelper.TABLE_CRITERIADAY, mAllColumns,
+                DBHelper.COLUMN_CRITERIADAY_ID + " = " + insertId, null, null,
+                null, null);
+        cursor.moveToFirst();
+        CriteriaDay _criteriaDay = cursorToCriteriaDay(cursor);
+        cursor.close();
+        return _criteriaDay;
     }
 
     private CriteriaDay cursorToCriteriaDay(Cursor cursor) {

@@ -1,12 +1,17 @@
 package ka.ti.asma.univ8.notemyday.model;
 
-import java.text.SimpleDateFormat;
+import android.content.ContentValues;
+
+import java.io.Serializable;
 import java.util.Date;
+
+import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
+import ka.ti.asma.univ8.notemyday.dao.DBHelper;
 
 /**
  * Created by Asma kouaouci on 18/12/2016.
  */
-public class Day {
+public class Day implements Serializable {
 
     private Date date;
 
@@ -15,17 +20,13 @@ public class Day {
     }
 
     private String dateString;
-    private  CriteriaDay[] criteriasDay;
 
     public Day() {
 
     };
-    public Day(Date date, CriteriaDay[] criteriasDay) {
+    public Day(Date date) {
         this.date = date;
-        this.criteriasDay = criteriasDay;
-    }
-    public CriteriaDay[] getCriteriasDay() {
-        return criteriasDay;
+        this.dateString = helperDate.dateFormatString(date);
     }
 
     public Date getDate() {
@@ -41,11 +42,13 @@ public class Day {
         this.dateString = dateString;
     }
 
-    public String dateFormatString(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format(getDate());
-        return date;
+    public ContentValues contentValues()
+    {
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.COLUMN_DAY_ID, getDateString());
+        return values;
     }
+
 }
 
 

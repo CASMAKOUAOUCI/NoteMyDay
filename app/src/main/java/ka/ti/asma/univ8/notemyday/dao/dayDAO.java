@@ -47,18 +47,21 @@ public class DayDAO {
         mDbHelper.close();
     }
 
-    public Day createDay(String dateID) {
-        ContentValues values = new ContentValues();
-        values.put(DBHelper.COLUMN_DAY_ID, dateID);
+    public void createDay(Day day) {
         long insertId = mDatabase
-                .insert(DBHelper.TABLE_DAYS, null, values);
+                .insert(DBHelper.TABLE_DAYS, null, day.contentValues());
         Cursor cursor = mDatabase.query(DBHelper.TABLE_DAYS, mAllColumns,
                 DBHelper.COLUMN_DAY_ID + " = " + insertId, null, null,
                 null, null);
-        cursor.moveToFirst();
-        Day newDay = cursorToDay(cursor);
+        System.out.println("cursor  content value"+cursor+day.contentValues());
+        if (cursor.moveToFirst())
+            cursorToDay(cursor);
+
         cursor.close();
-        return newDay;
+    }
+
+    public void insertDay(Day day) {
+        mDatabase.insert(DBHelper.TABLE_DAYS, null,day.contentValues());
     }
 
     public void deleteDay(Day day) {
@@ -77,7 +80,7 @@ public class DayDAO {
                 + " = " + id, null);
     }
 
-    public List<Day> getAllCompanies() {
+    public List<Day> getAllDays() {
         List<Day> listDays = new ArrayList<Day>();
 
         Cursor cursor = mDatabase.query(DBHelper.TABLE_DAYS, mAllColumns,
@@ -100,12 +103,13 @@ public class DayDAO {
         Cursor cursor = mDatabase.query(DBHelper.TABLE_DAYS, mAllColumns,
                 DBHelper.COLUMN_DAY_ID + " = ?",
                 new String[] { String.valueOf(id) }, null, null, null);
-        if (cursor != null) {
-            cursor.moveToFirst();
+        if (cursor.moveToFirst()) {
+            Day Day = cursorToDay(cursor);
+            return Day;
         }
-        Day Day = cursorToDay(cursor);
-        return Day;
+      return null;
     }
+
 
     protected Day cursorToDay(Cursor cursor) {
         Day Day = new Day();

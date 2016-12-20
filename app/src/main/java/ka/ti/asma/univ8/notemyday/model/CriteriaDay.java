@@ -1,8 +1,13 @@
 package ka.ti.asma.univ8.notemyday.model;
 
+import android.content.ContentValues;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
+import ka.ti.asma.univ8.notemyday.dao.DBHelper;
 
 /**
  * Created by Asma kouaouci on 18/12/2016.
@@ -31,7 +36,7 @@ public class CriteriaDay implements Serializable {
         this.name = name;
         this.description = description;
         this.rating = rating;
-        this.dateString = dateFormatString();
+        this.dateString = helperDate.dateFormatString(date);
     }
 
     public String toString() {
@@ -65,12 +70,6 @@ public class CriteriaDay implements Serializable {
         this.rating = rating;
     }
 
-    public String dateFormatString(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format(getDate());
-        return date;
-    }
-
     public float getRating() {
         return rating;
     }
@@ -88,5 +87,16 @@ public class CriteriaDay implements Serializable {
     public void setDay(Day day) {
         this.day = day;
     }
+
+    public ContentValues contentValue()
+    {
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.COLUMN_CRITERIADAY_NAME, name);
+        values.put(DBHelper.COLUMN_CRITERIADAY_DESCRIPTION, description);
+        values.put(DBHelper.COLUMN_CRITERIADAY_DAY_ID, this.getDateString());
+        values.put(DBHelper.COLUMN_CRITERIADAY_RATING, rating);
+        return values;
+    }
+
 }
 
