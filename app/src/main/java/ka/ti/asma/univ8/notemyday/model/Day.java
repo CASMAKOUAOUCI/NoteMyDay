@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.List;
 
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.dao.DBHelper;
@@ -15,6 +16,11 @@ import ka.ti.asma.univ8.notemyday.dao.DBHelper;
 public class Day implements Serializable {
 
     private Date date;
+
+    public float getRating() {
+        return rating;
+    }
+
     public float rating;
 
     public String getDateString() {
@@ -49,8 +55,7 @@ public class Day implements Serializable {
         this.dateString = dateString;
     }
 
-    public ContentValues contentValues()
-    {
+    public ContentValues contentValues() {
         ContentValues values = new ContentValues();
         values.put(DBHelper.COLUMN_DAY_ID, getDateString());
         return values;
@@ -60,6 +65,9 @@ public class Day implements Serializable {
         return helperDate.dateLongFormatString(getDate());
     }
 
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
 }
 
 

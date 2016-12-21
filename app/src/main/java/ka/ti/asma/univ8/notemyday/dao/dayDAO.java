@@ -74,7 +74,6 @@ public class DayDAO {
                 criteriaDayDAO.deleteCriteriaDay(c);
             }
         }
-
         System.out.println("the deleted Day has the id: " + id);
         mDatabase.delete(DBHelper.TABLE_DAYS, DBHelper.COLUMN_DAY_ID
                 + " = " + id, null);
@@ -92,7 +91,6 @@ public class DayDAO {
                 listDays.add(Day);
                 cursor.moveToNext();
             }
-
             // make sure to close the cursor
             cursor.close();
         }

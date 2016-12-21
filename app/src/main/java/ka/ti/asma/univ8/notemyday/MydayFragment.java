@@ -68,7 +68,9 @@ public class MydayFragment extends ListFragment {
                 android.R.layout.simple_list_item_1,
                 criteriasDayList
         );
-        setListAdapter(listViewAdapter); //setter l'adapteur a la listeView
+        List<Object> criteriaListObject = (List<Object>)(List<?>) criteriasDayList;
+
+        setListAdapter(new CustomAdapter(this.getActivity(), criteriaListObject,1));
 
        refreshRating(view);
 
@@ -98,14 +100,6 @@ public class MydayFragment extends ListFragment {
         criteriaDayDAO.insertCriteriaDay(criteria3);
 
         criteriasDayList = criteriaDayDAO.getCriteriaDayOfDay(day.getDateString());
-    }
-
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        Intent intent = new Intent(getContext(), CriteriaDayActivity.class);
-        CriteriaDay criteriaDay = criteriasDayList.get(position);
-        intent.putExtra("CriteriaDay", (Serializable) criteriaDay);
-        startActivity(intent);
     }
 
     @Override
