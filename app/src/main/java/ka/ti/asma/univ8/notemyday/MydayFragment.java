@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -19,6 +20,7 @@ import ka.ti.asma.univ8.notemyday.dao.DBHelper;
 import ka.ti.asma.univ8.notemyday.dao.DayDAO;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
 import ka.ti.asma.univ8.notemyday.model.Day;
+import ka.ti.asma.univ8.notemyday.model.helperDate;
 
 
 /**
@@ -44,12 +46,12 @@ public class MydayFragment extends ListFragment {
         dayDAO = new DayDAO(this.getContext());
         Date date = new Date();
 
-        day = new Day(date);
 
-        Day dayDB = dayDAO.getDayById(day.getDateString());
+        day = dayDAO.getDayById(helperDate.dateFormatString(date));
 
-        if (dayDB == null)
+        if (day == null)
         {
+            day = new Day(date);
             dayDAO.insertDay(day);
         }
 
@@ -68,7 +70,22 @@ public class MydayFragment extends ListFragment {
         );
         setListAdapter(listViewAdapter); //setter l'adapteur a la listeView
 
-        return view;
+       refreshRating(view);
+
+    return view;
+    }
+
+    private void refreshRating(View view) {
+        if (criteriasDayList.size() > 0 ) {
+            float rating = 0;
+            for (int i = 0; i < criteriasDayList.size(); i++) {
+                CriteriaDay criteriaDay = criteriasDayList.get(i);
+                rating += criteriaDay.getRating();
+            }
+            day.rating = rating / criteriasDayList.size();
+            RatingBar ratingBar = (RatingBar) view.findViewById(R.id.nav_fragment_myday_ratingBar);
+            ratingBar.setRating(day.rating);
+        }
     }
 
     private void addDefaultCriteriaDay() {

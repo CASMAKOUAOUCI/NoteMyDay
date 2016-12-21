@@ -1,11 +1,13 @@
 package ka.ti.asma.univ8.notemyday;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.TextView;
 
 import java.io.Serializable;
 
@@ -26,12 +28,11 @@ public class CriteriaDayActivity extends AppCompatActivity implements Serializab
     }
 
     private void updateActivity() {
-
         Intent intent = getIntent();
         criteriaDay = (CriteriaDay) intent.getSerializableExtra("CriteriaDay");
-
         if (criteriaDay != null){
-            this.setTitle(criteriaDay.getName());
+            TextView titleView = (TextView) findViewById(R.id.activity_criteria_day_toolbar_title);
+            titleView.setText(criteriaDay.getName());
             RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBare_critiria_day);
             ratingBar.setRating(criteriaDay.getRating());
             EditText textDescription = (EditText) findViewById(R.id.editText_critiria_day);

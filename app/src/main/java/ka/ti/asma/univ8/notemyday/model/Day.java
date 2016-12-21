@@ -15,6 +15,7 @@ import ka.ti.asma.univ8.notemyday.dao.DBHelper;
 public class Day implements Serializable {
 
     private Date date;
+    public float rating;
 
     public String getDateString() {
         return dateString;
