@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ka.ti.asma.univ8.notemyday.MydayFragment">
+    tools:context="ka.ti.asma.univ8.notemyday.Fragments.MyDayFragment">
 
 
     <android.support.design.widget.FloatingActionButton

@@ -12,6 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import ka.ti.asma.univ8.notemyday.Fragments.AproposFragment;
+import ka.ti.asma.univ8.notemyday.Fragments.DaysHistoryFragment;
+import ka.ti.asma.univ8.notemyday.Fragments.GrapheFragment;
+import ka.ti.asma.univ8.notemyday.Fragments.MyDayFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,7 +35,7 @@ public class MainActivity extends AppCompatActivity
             // Initialisation du fragment manager
             fragmentManager = getSupportFragmentManager();
             // afficher le premier fragment par défaut
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new MyDayFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -66,7 +71,7 @@ public class MainActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 10001 && resultCode == this.RESULT_OK) {
             // recreate MydayFragment
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new MyDayFragment()).commit();
         }
     }
 
@@ -88,10 +93,10 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_fragment_myday) {
             // Affichage du fragment MydayFragment
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new MyDayFragment()).commit();
         } else if (id == R.id.nav_fragment_days_history) {
-            // Affichage du fragment DaysHistory
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new DaysHistory()).commit();
+            // Affichage du fragment DaysHistoryFragment
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new DaysHistoryFragment()).commit();
         } else if (id == R.id.nav_fragment_graphe) {
             // Affichage du fragment GrapheFragment
             fragmentManager.beginTransaction().replace(R.id.content_frame, new GrapheFragment()).commit();

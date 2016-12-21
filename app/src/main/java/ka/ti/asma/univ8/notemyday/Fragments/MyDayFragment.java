@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Fragments;
 
 
 import android.content.Intent;
@@ -14,6 +14,9 @@ import android.widget.RatingBar;
 import java.util.Date;
 import java.util.List;
 
+import ka.ti.asma.univ8.notemyday.CustomAdapter;
+import ka.ti.asma.univ8.notemyday.NewCriteriaDayActivity;
+import ka.ti.asma.univ8.notemyday.R;
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.dao.DayDAO;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
@@ -24,9 +27,9 @@ import ka.ti.asma.univ8.notemyday.model.helperDate;
 /**
  * A simple {@link ListFragment} subclass.
  */
-public class MydayFragment extends ListFragment {
+public class MyDayFragment extends ListFragment {
 
-    public MydayFragment() {
+    public MyDayFragment() {
         // Required empty public constructor
     }
     private Day day;

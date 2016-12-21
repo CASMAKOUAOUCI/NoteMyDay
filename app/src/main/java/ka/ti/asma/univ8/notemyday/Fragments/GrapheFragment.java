@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Fragments;
 
 
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.List;
 
+import ka.ti.asma.univ8.notemyday.R;
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.dao.DayDAO;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;

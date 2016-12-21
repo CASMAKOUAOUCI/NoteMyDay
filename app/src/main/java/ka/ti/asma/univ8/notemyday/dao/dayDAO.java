@@ -1,6 +1,5 @@
 package ka.ti.asma.univ8.notemyday.dao;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -12,7 +11,6 @@ import java.util.List;
 
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
 import ka.ti.asma.univ8.notemyday.model.Day;
-import ka.ti.asma.univ8.notemyday.dao.DBHelper;
 
 /**
  * Created by abdelmadjidchaibi on 20/12/2016.

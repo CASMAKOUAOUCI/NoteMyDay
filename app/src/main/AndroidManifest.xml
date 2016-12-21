@@ -25,7 +25,7 @@
         <activity android:name=".NewCriteriaDayActivity" />
         <activity android:name=".DetailHistoryActivity" />
         <activity
-            android:name=".AproposFragment"
+            android:name=".Fragments.AproposFragment"
             android:label="@string/title_activity_apropos"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Fragments;
 
 
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import ka.ti.asma.univ8.notemyday.CustomAdapter;
+import ka.ti.asma.univ8.notemyday.R;
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.dao.DayDAO;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
@@ -19,13 +21,13 @@ import ka.ti.asma.univ8.notemyday.model.Day;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DaysHistory extends ListFragment {
+public class DaysHistoryFragment extends ListFragment {
 
     private List<Day> dayList;
     private DayDAO dayDAO;
     private CriteriaDayDAO criteriaDayDAO;
     
-    public DaysHistory() {
+    public DaysHistoryFragment() {
         // Required empty public constructor
     }
 

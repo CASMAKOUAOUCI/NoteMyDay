@@ -1,6 +1,8 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Fragments;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import ka.ti.asma.univ8.notemyday.R;
 
 public class AproposFragment extends Fragment {
 
@@ -41,6 +45,14 @@ public class AproposFragment extends Fragment {
         EditText editText = (EditText) view.findViewById(R.id.fragment_Apropos_EditText);
 
         String applicationName = "NOTER MA JOURNEÉ";
+        PackageInfo pInfo = null;
+        try {
+            pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        String version = pInfo.versionName;
+
         String applicationDescription = "est une application crée en 2016 par";
         String dev1 = "KOUAOUCI Asma Amina";
         String dev2 = "KAIS Tiziri";
@@ -48,7 +60,7 @@ public class AproposFragment extends Fragment {
 
         String enseignant = "Enseignant : Guillaume Besacier";
 
-        editText.append(Html.fromHtml("<b> <br /> " + applicationName  +"</b>" +  " <br /> <br />"
+        editText.append(Html.fromHtml("<b> <br /> " + applicationName +"<br /> "  +" version " + version + "</b> <br /><br />"
                 +applicationDescription  + "<b> <br /><br /> " +
                 dev1 + "<b><br /> <br />"
                 + dev2 + "<b> <br /><br /> "
