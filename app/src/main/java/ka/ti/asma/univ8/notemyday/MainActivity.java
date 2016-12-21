@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             // Initialisation du fragment manager
             fragmentManager = getSupportFragmentManager();
-
             // afficher le premier fragment par défaut
             fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();
         }
@@ -84,6 +83,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void createFragment(int id) {
+
+        fragmentManager = getSupportFragmentManager();
+
         if (id == R.id.nav_fragment_myday) {
             // Affichage du fragment MydayFragment
             fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();

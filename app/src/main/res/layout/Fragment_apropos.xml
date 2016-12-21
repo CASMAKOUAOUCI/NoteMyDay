@@ -19,4 +19,27 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="19dp" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@mipmap/logop8"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="A propos"
+        android:id="@+id/fragment_Apropos_EditText"
+        android:focusable="false"
+        android:layout_marginTop="0dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"/>
+
 </RelativeLayout>

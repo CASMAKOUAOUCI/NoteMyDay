@@ -38,7 +38,6 @@ public class GrapheFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_graphe, container, false);
-
         GraphView graph = (GraphView) view.findViewById(R.id.graph);
         List<DataPoint> listDataPoint = null;
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
@@ -48,7 +47,6 @@ public class GrapheFragment extends Fragment {
         criteriaDayDAO = new CriteriaDayDAO(this.getContext());
 
         dayList = dayDAO.getAllDays();
-        dayDAO.close();
         getActivity().setTitle("Historique Graphe");
         int size = dayList.size();
         System.out.print("day.getRating()"+dayList);
@@ -66,6 +64,8 @@ public class GrapheFragment extends Fragment {
             day.setRating(rating/criteriasDayList.size());
             series.appendData(new DataPoint(i,day.getRating()),false,size);
         }
+        dayDAO.close();
+        criteriaDayDAO.close();
 
 // set manual X bounds
         graph.getViewport().setXAxisBoundsManual(true);

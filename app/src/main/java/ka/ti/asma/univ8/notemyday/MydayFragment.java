@@ -81,6 +81,8 @@ public class MydayFragment extends ListFragment {
             }
         });
 
+        dayDAO.close();
+        criteriaDayDAO.close();
     return view;
     }
 
@@ -105,8 +107,9 @@ public class MydayFragment extends ListFragment {
         criteriaDayDAO.insertCriteriaDay(criteria1);
         criteriaDayDAO.insertCriteriaDay(criteria2);
         criteriaDayDAO.insertCriteriaDay(criteria3);
-
         criteriasDayList = criteriaDayDAO.getCriteriaDayOfDay(day.getDateString());
+
+        criteriaDayDAO.close();
     }
 
     @Override

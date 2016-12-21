@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class AproposFragment extends Fragment {
@@ -35,6 +37,17 @@ public class AproposFragment extends Fragment {
 
             }
         });
+
+        EditText editText = (EditText) view.findViewById(R.id.fragment_Apropos_EditText);
+
+        String applicationName = "NOTER MA JOURNEÉ";
+        String applicationDescription = "est une application crée en 2016 par";
+        String dev1 = "KOUAOUCI ASMA AMINA";
+        String dev2 = "KAIS ";
+        String dev3 = "KAHINA";
+
+        editText.append(Html.fromHtml("<b> <br /> " + applicationName  +"</b>" +  " <br /> <br />" +applicationDescription  + "<b> <br /><br /> " +
+                dev1 + "<b><br /> <br />" + dev2 + "<b> <br /><br /> " + dev3));
         return view;
     }
 

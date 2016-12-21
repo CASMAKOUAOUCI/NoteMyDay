@@ -16,7 +16,7 @@
         android:id="@+id/nav_fragment_myday_ratingBar"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="90dp"
         android:clickable="false"
         tools:clickable="false"
         android:contextClickable="false"
@@ -25,7 +25,7 @@
     <Button
         android:text="Ajouter un critère"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
