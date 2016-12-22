@@ -24,6 +24,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NewCriteriaDayActivity" />
         <activity android:name=".DetailHistoryActivity" />
+        <activity
+            android:name=".AproposFragment"
+            android:label="@string/title_activity_apropos"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

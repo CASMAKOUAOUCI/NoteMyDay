@@ -4,30 +4,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_fragment_myday"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home"
             android:title="Ma journée" />
         <item
             android:id="@+id/nav_fragment_days_history"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/history"
             android:title="Historique" />
         <item
             android:id="@+id/nav_fragment_graphe"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/graphe"
             android:title="Graphe" />
-
+        <item
+            android:id="@+id/nav_fragment_Apropos"
+            android:icon="@drawable/about"
+            android:title="À propos" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Â propos" />
-        </menu>
-    </item>
 
 </menu>
