@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -40,7 +42,7 @@ public class MydayFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_myday, container, false);
+        final View view = inflater.inflate(R.layout.fragment_myday, container, false);
 
         criteriaDayDAO = new CriteriaDayDAO(this.getContext());
         dayDAO = new DayDAO(this.getContext());
@@ -73,6 +75,18 @@ public class MydayFragment extends ListFragment {
         setListAdapter(new CustomAdapter(this.getActivity(), criteriaListObject,1));
 
        refreshRating(view);
+
+
+        Button addCrtiteriaDay = (Button)view.findViewById(R.id.fragment_myday_addCriteriadayButton);
+        addCrtiteriaDay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(), "You Clicked ", Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(view.getContext(), NewCriteriaDayActivity.class);
+                    view.getContext().startActivity(intent);
+            }
+        });;
 
     return view;
     }

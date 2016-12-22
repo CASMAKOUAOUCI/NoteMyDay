@@ -21,7 +21,8 @@
         <activity
             android:name=".CriteriaDayActivity"
             android:label="@string/title_activity_criteria_day"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".NewCriteriaDayActivity"></activity>
     </application>
 
 </manifest>

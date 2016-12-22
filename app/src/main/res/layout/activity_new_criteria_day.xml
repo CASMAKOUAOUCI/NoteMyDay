@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_criteria_day"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ka.ti.asma.univ8.notemyday.NewCriteriaDayActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/activity_new_criteria_day_EditText_Name"
+        android:hint="Nom du critère (obligatoire) "/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/activity_new_criteria_day_EditText_description"
+        android:hint="Déscription du critère"
+        android:layout_below="@+id/activity_new_criteria_day_EditText_Name"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_new_criteria_day_ratingBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Sauvegader"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_new_criteria_day_saveButton"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/activity_new_criteria_day_ratingBar"
+        android:layout_alignLeft="@+id/activity_new_criteria_day_ratingBar"
+        android:layout_alignStart="@+id/activity_new_criteria_day_ratingBar"
+        android:layout_marginLeft="129dp"
+        android:layout_marginStart="129dp" />
+
+    <Button
+        android:text="Annuler"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_new_criteria_day_annuler"
+        android:layout_alignBaseline="@+id/activity_new_criteria_day_saveButton"
+        android:layout_alignBottom="@+id/activity_new_criteria_day_saveButton" />
+
+</RelativeLayout>
