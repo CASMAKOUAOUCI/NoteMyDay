@@ -3,7 +3,9 @@ package ka.ti.asma.univ8.notemyday;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,11 +45,11 @@ public class MydayFragment extends ListFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_myday, container, false);
+        this.getActivity().setTitle("Ma Journée");
 
         criteriaDayDAO = new CriteriaDayDAO(this.getContext());
         dayDAO = new DayDAO(this.getContext());
         Date date = new Date();
-
 
         day = dayDAO.getDayById(helperDate.dateFormatString(date));
 
@@ -76,7 +78,6 @@ public class MydayFragment extends ListFragment {
 
        refreshRating(view);
 
-
         Button addCrtiteriaDay = (Button)view.findViewById(R.id.fragment_myday_addCriteriadayButton);
         addCrtiteriaDay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +91,7 @@ public class MydayFragment extends ListFragment {
 
     return view;
     }
+
 
     private void refreshRating(View view) {
         if (criteriasDayList.size() > 0 ) {

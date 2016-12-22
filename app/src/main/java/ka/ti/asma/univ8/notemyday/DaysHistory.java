@@ -38,6 +38,8 @@ public class DaysHistory extends ListFragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_days_history, container, false);
+        this.getActivity().setTitle("Mon historique");
+
         dayDAO = new DayDAO(this.getContext());
 
         dayList = dayDAO.getAllDays();

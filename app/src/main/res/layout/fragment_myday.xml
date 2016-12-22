@@ -16,7 +16,11 @@
         android:id="@+id/nav_fragment_myday_ratingBar"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginBottom="70dp"
+        android:clickable="false"
+        tools:clickable="false"
+        android:contextClickable="false"
+        style="@style/Widget.AppCompat.RatingBar.Indicator" />
 
     <Button
         android:text="Ajouter un critère"
