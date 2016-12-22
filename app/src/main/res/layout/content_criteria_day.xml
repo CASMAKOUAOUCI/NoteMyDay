@@ -18,13 +18,15 @@
         android:id="@+id/editText_critiria_day"
         android:layout_marginTop="60dp"
         android:hint="Description"
+        android:maxLines="10"
+        android:maxLength="200"
         android:textStyle="bold"/>
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBare_critiria_day"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/editText_critiria_day"
         android:layout_centerHorizontal="true" />
 
@@ -32,7 +34,7 @@
         android:text="Sauevgarder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ratingBare_critiria_day"
+        android:layout_above="@+id/activity_new_criteria_day_deleteButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:id="@+id/activity_new_criteria_day_saveButton"/>
@@ -41,7 +43,7 @@
         android:text="Supprimer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_new_criteria_day_saveButton"
+        android:layout_above="@+id/activity_new_criteria_day_cancelButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="2dp"
         android:id="@+id/activity_new_criteria_day_deleteButton"/>
@@ -50,9 +52,10 @@
         android:text="Annuler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_new_criteria_day_deleteButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:id="@+id/activity_new_criteria_day_cancelButton"/>
+        android:id="@+id/activity_new_criteria_day_cancelButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="17dp" />
 
 </RelativeLayout>

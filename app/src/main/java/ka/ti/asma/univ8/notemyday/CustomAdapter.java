@@ -115,6 +115,10 @@ public class CustomAdapter extends BaseAdapter {
                 }else if (typeList == 0)
                 {
                     // display history details
+                    Intent intent = new Intent(context, DetailHistoryActivity.class);
+                    Day day = (Day) result.get(position);
+                    intent.putExtra("Day", (Serializable) day);
+                    fragment.getActivity().startActivity(intent);
                 }
             }
         });

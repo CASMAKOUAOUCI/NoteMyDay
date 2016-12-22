@@ -76,7 +76,7 @@ public class MydayFragment extends ListFragment {
 
         setListAdapter(new CustomAdapter(this.getActivity(), criteriaListObject,1,this));
 
-       refreshRating(view);
+        refreshRating(view);
 
         Button addCrtiteriaDay = (Button)view.findViewById(R.id.fragment_myday_addCriteriadayButton);
         addCrtiteriaDay.setOnClickListener(new View.OnClickListener() {

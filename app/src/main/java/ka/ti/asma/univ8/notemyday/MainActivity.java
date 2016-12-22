@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        Toast.makeText(this, "onActivityResult requestCode "+requestCode +" resultcode "+resultCode, Toast.LENGTH_LONG).show();
-
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 10001 && resultCode == this.RESULT_OK) {
             // recreate MydayFragment
