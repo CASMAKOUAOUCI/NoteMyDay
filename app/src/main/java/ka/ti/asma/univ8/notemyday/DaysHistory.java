@@ -25,9 +25,7 @@ public class DaysHistory extends ListFragment {
     private List<Day> dayList;
     private DayDAO dayDAO;
     private CriteriaDayDAO criteriaDayDAO;
-
-    public static int [] prgmImages={R.drawable.ic_menu_gallery,R.drawable.ic_menu_camera,R.drawable.ic_menu_send,R.drawable.ic_menu_share,R.drawable.ic_menu_slideshow,R.drawable.ic_menu_camera};
-
+    
     public DaysHistory() {
         // Required empty public constructor
     }
@@ -43,8 +41,6 @@ public class DaysHistory extends ListFragment {
 
         dayList = dayDAO.getAllDays();
         criteriaDayDAO = new CriteriaDayDAO(this.getContext());
-
-        TextView textView = (TextView) view.findViewById(R.id.nav_fragment_days_history_textView);
 
         if (dayList.size() > 0 )
         {
