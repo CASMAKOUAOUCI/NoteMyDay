@@ -1,6 +1,5 @@
 package ka.ti.asma.univ8.notemyday;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
@@ -11,11 +10,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
 import ka.ti.asma.univ8.notemyday.model.Day;
