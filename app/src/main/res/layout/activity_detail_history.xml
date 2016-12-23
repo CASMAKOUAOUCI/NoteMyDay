@@ -19,7 +19,9 @@
         android:layout_marginTop="10dp"
         android:maxLines="30"
         android:maxLength="2000"
-        android:id="@+id/activity_detail_history_EditText" />
+        android:gravity="center_horizontal"
+        android:id="@+id/activity_detail_history_EditText"
+        android:background="@android:color/transparent"/>
 
     <RatingBar
         android:layout_width="wrap_content"
