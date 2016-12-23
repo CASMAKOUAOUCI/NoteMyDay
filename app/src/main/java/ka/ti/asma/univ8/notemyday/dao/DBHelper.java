@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // SQL statement of the creteriaDay table creation
-    private static final String SQL_CREATE_TABLE_CRITERIADA = "CREATE TABLE " + TABLE_CRITERIADAY + "("+ COLUMN_CRITERIADAY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+ COLUMN_CRITERIADAY_NAME + " TEXT NOT NULL, "+ COLUMN_CRITERIADAY_DESCRIPTION + " TEXT NOT NULL, "+ COLUMN_CRITERIADAY_RATING + " REAL NOT NULL, "+ COLUMN_CRITERIADAY_DAY_ID + " TEXT NOT NULL "+");";
+    private static final String SQL_CREATE_TABLE_CRITERIADAY = "CREATE TABLE " + TABLE_CRITERIADAY + "("+ COLUMN_CRITERIADAY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+ COLUMN_CRITERIADAY_NAME + " TEXT NOT NULL, "+ COLUMN_CRITERIADAY_DESCRIPTION + " TEXT NOT NULL, "+ COLUMN_CRITERIADAY_RATING + " REAL NOT NULL, "+ COLUMN_CRITERIADAY_DAY_ID + " TEXT NOT NULL "+");";
 
     // SQL statement of the days table creation
     private static final String SQL_CREATE_TABLE_DAYS = "CREATE TABLE "+ TABLE_DAYS + "("+ COLUMN_DAY_ID + " TEXT PRIMARY KEY "+");";
@@ -39,7 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(SQL_CREATE_TABLE_DAYS);
-        database.execSQL(SQL_CREATE_TABLE_CRITERIADA);
+        database.execSQL(SQL_CREATE_TABLE_CRITERIADAY);
     }
 
     @Override

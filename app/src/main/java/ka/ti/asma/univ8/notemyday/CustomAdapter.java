@@ -1,8 +1,10 @@
 package ka.ti.asma.univ8.notemyday;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,12 +28,16 @@ public class CustomAdapter extends BaseAdapter {
     List<Object> result;
     Context context;
     int typeList;
+    ListFragment fragment;
+
     private static LayoutInflater inflater=null;
-    public CustomAdapter(FragmentActivity mainActivity, List<Object> prgmNameList, int type) {
+
+    public CustomAdapter(FragmentActivity mainActivity, List<Object> prgmNameList, int type, ListFragment listFragment) {
         // TODO Auto-generated constructor stub
         typeList = type;
         result=prgmNameList;
         context = mainActivity;
+        fragment =  listFragment;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -100,14 +106,15 @@ public class CustomAdapter extends BaseAdapter {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+text, Toast.LENGTH_LONG).show();
                 if (typeList == 1)
                 {
                     Intent intent = new Intent(context, CriteriaDayActivity.class);
                     CriteriaDay criteriaDay = (CriteriaDay) result.get(position);
                     intent.putExtra("CriteriaDay", (Serializable) criteriaDay);
-                    context.startActivity(intent);
+                    fragment.getActivity().startActivityForResult(intent,10001);
+                }else if (typeList == 0)
+                {
+                    // display history details
                 }
             }
         });

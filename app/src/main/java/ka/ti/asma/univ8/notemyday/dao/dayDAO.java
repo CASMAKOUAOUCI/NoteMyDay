@@ -53,7 +53,6 @@ public class DayDAO {
         Cursor cursor = mDatabase.query(DBHelper.TABLE_DAYS, mAllColumns,
                 DBHelper.COLUMN_DAY_ID + " = " + insertId, null, null,
                 null, null);
-        System.out.println("cursor  content value"+cursor+day.contentValues());
         if (cursor.moveToFirst())
             cursorToDay(cursor);
 

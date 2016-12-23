@@ -1,5 +1,6 @@
 package ka.ti.asma.univ8.notemyday;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +24,6 @@ public class NewCriteriaDayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_criteria_day);
         setTitle("Nouveau Critére");
-
 
         Button annulerButton = (Button) findViewById(R.id.activity_new_criteria_day_annuler);
         annulerButton.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +53,8 @@ public class NewCriteriaDayActivity extends AppCompatActivity {
                     CriteriaDay criteriaDay = new CriteriaDay(new Date(),nameCriteriaDay.getText().toString(),descriptionCriteriaDay.getText().toString(),ratingCriteriaDay.getRating());
                     criteriaDayDAO.insertCriteriaDay(criteriaDay);
                     criteriaDayDAO.close();
+                    Intent returnIntent = new Intent();
+                    setResult(Activity.RESULT_OK,returnIntent);
                     finish();
                 }
             }

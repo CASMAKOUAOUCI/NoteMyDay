@@ -1,5 +1,7 @@
 package ka.ti.asma.univ8.notemyday;
 
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -61,12 +64,32 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        Toast.makeText(this, "onActivityResult requestCode "+requestCode +" resultcode "+resultCode, Toast.LENGTH_LONG).show();
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10001 && resultCode == this.RESULT_OK) {
+            // recreate MydayFragment
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();
+        }
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        createFragment(id);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    private void createFragment(int id) {
         if (id == R.id.nav_fragment_myday) {
             // Affichage du fragment MydayFragment
             fragmentManager.beginTransaction().replace(R.id.content_frame, new MydayFragment()).commit();
@@ -77,9 +100,5 @@ public class MainActivity extends AppCompatActivity
             // Affichage du fragment GrapheFragment
             fragmentManager.beginTransaction().replace(R.id.content_frame, new GrapheFragment()).commit();
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }

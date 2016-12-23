@@ -16,9 +16,6 @@ import ka.ti.asma.univ8.notemyday.dao.DBHelper;
 public class CriteriaDay implements Serializable {
 
     private  Date date;
-
-
-
     private  long id;
     private  String dateString;
     private  String name;
@@ -40,7 +37,7 @@ public class CriteriaDay implements Serializable {
     }
 
     public String toString() {
-        return name + "   " + rating;
+        return name + "   " + rating + "/5";
     }
 
     public String getName() {
@@ -74,6 +71,13 @@ public class CriteriaDay implements Serializable {
         return rating;
     }
 
+    public Day getDay() {
+        return day;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
     public void setDateString(String dateString) {
         this.dateString = dateString;
     }

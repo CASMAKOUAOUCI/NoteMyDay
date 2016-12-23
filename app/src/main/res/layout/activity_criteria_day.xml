@@ -12,38 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        android:contentInsetEnd="0dp"
-        android:contentInsetLeft="0dp"
-        android:contentInsetRight="0dp"
-        android:contentInsetStart="0dp"
-        android:elevation="2dp"
-        app:contentInsetEnd="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetStart="0dp"
         app:popupTheme="@style/AppTheme.PopupOverlay">
 
         <TextView
             android:id="@+id/activity_criteria_day_toolbar_title"
-            android:layout_width="271dp"
-            android:layout_height="39dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="Activity"
             android:textColor="#FFF"
-            android:textSize="22sp"
+            android:textSize="24sp"
             android:textStyle="bold"/>
 
-        <Button
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:id="@+id/showevents"
-            android:textSize="13sp"
-            android:background="@null"
-            android:layout_alignParentRight="true"
-            android:textColor="#FFF"
-            android:text="Sauvgarder"
-            android:textStyle="bold"/>
 
     </android.support.v7.widget.Toolbar>
 

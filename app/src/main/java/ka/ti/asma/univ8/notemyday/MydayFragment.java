@@ -74,7 +74,7 @@ public class MydayFragment extends ListFragment {
         );
         List<Object> criteriaListObject = (List<Object>)(List<?>) criteriasDayList;
 
-        setListAdapter(new CustomAdapter(this.getActivity(), criteriaListObject,1));
+        setListAdapter(new CustomAdapter(this.getActivity(), criteriaListObject,1,this));
 
        refreshRating(view);
 
@@ -82,16 +82,13 @@ public class MydayFragment extends ListFragment {
         addCrtiteriaDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(view.getContext(), "You Clicked ", Toast.LENGTH_LONG).show();
-
                     Intent intent = new Intent(view.getContext(), NewCriteriaDayActivity.class);
-                    view.getContext().startActivity(intent);
+                    getActivity().startActivityForResult(intent,10001);
             }
-        });;
+        });
 
     return view;
     }
-
 
     private void refreshRating(View view) {
         if (criteriasDayList.size() > 0 ) {
@@ -107,9 +104,9 @@ public class MydayFragment extends ListFragment {
     }
 
     private void addDefaultCriteriaDay() {
-        CriteriaDay criteria2 = new CriteriaDay(day.getDate(),"Santé","En trés bonne forme",5);
-        CriteriaDay criteria1 = new CriteriaDay(day.getDate(),"culture","j'ai lu 15 page du livre 'comment etre heureux'",3);
-        CriteriaDay criteria3 = new CriteriaDay(day.getDate(),"Sport","j'ai fais 20 min de sport",2);
+        CriteriaDay criteria2 = new CriteriaDay(day.getDate(),"Santé","",3);
+        CriteriaDay criteria1 = new CriteriaDay(day.getDate(),"Culture","",3);
+        CriteriaDay criteria3 = new CriteriaDay(day.getDate(),"Sport","",3);
 
         criteriaDayDAO.insertCriteriaDay(criteria1);
         criteriaDayDAO.insertCriteriaDay(criteria2);

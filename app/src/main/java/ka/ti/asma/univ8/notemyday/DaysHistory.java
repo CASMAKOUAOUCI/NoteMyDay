@@ -7,7 +7,6 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
@@ -63,14 +62,9 @@ public class DaysHistory extends ListFragment {
             }
             // créer l'adapteur pour la listeView
             List<Object> dayListObject = (List<Object>)(List<?>) dayList;
-
-            setListAdapter(new CustomAdapter(this.getActivity(), dayListObject,0)); //setter l'adapteur a la listeView
-            textView.setVisibility(View.GONE);
-        }else
-        {
-            textView.setVisibility(View.VISIBLE);
+            setListAdapter(new CustomAdapter(this.getActivity(), dayListObject,0,this));
+            criteriaDayDAO.close();
         }
-
         return view;
     }
 }
