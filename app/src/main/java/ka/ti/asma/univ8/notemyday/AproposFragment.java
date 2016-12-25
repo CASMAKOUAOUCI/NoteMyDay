@@ -42,12 +42,19 @@ public class AproposFragment extends Fragment {
 
         String applicationName = "NOTER MA JOURNEÉ";
         String applicationDescription = "est une application crée en 2016 par";
-        String dev1 = "KOUAOUCI ASMA AMINA";
-        String dev2 = "KAIS ";
-        String dev3 = "KAHINA";
+        String dev1 = "KOUAOUCI Asma Amina";
+        String dev2 = "KAIS Tiziri";
+        String dev3 = "MOHAMMEDI Kahina";
 
-        editText.append(Html.fromHtml("<b> <br /> " + applicationName  +"</b>" +  " <br /> <br />" +applicationDescription  + "<b> <br /><br /> " +
-                dev1 + "<b><br /> <br />" + dev2 + "<b> <br /><br /> " + dev3));
+        String enseignant = "Enseignant : Guillaume Besacier";
+
+        editText.append(Html.fromHtml("<b> <br /> " + applicationName  +"</b>" +  " <br /> <br />"
+                +applicationDescription  + "<b> <br /><br /> " +
+                dev1 + "<b><br /> <br />"
+                + dev2 + "<b> <br /><br /> "
+                + dev3 +  "<b> <br /><br /> "
+                +enseignant));
+
         return view;
     }
 

@@ -36,12 +36,12 @@ public class DaysHistory extends ListFragment {
         View view = inflater.inflate(R.layout.fragment_days_history, container, false);
         this.getActivity().setTitle("Mon historique");
 
+        criteriaDayDAO = new CriteriaDayDAO(this.getContext());
+
         if (savedInstanceState == null)
         {
             dayDAO = new DayDAO(this.getContext());
             dayList = dayDAO.getAllDays();
-            criteriaDayDAO = new CriteriaDayDAO(this.getContext());
-            criteriaDayDAO.close();
             dayDAO.close();
         }
 
@@ -63,6 +63,8 @@ public class DaysHistory extends ListFragment {
             List<Object> dayListObject = (List<Object>)(List<?>) dayList;
             setListAdapter(new CustomAdapter(this.getActivity(), dayListObject,0,this));
         }
+        criteriaDayDAO.close();
+
         return view;
     }
 }
