@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.dao;
+package univ8.notemyday.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

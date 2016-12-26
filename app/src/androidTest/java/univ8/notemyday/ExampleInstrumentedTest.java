@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package univ8.notemyday;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ka.ti.asma.univ8.notemyday", appContext.getPackageName());
+        assertEquals("univ8.notemyday", appContext.getPackageName());
     }
 }

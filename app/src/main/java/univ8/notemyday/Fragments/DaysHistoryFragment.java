@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.Fragments;
+package univ8.notemyday.Fragments;
 
 
 import android.os.Bundle;
@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import ka.ti.asma.univ8.notemyday.CustomAdapter;
-import ka.ti.asma.univ8.notemyday.R;
-import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
-import ka.ti.asma.univ8.notemyday.dao.DayDAO;
-import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
-import ka.ti.asma.univ8.notemyday.model.Day;
+import univ8.notemyday.CustomAdapter;
+import univ8.notemyday.R;
+import univ8.notemyday.dao.CriteriaDayDAO;
+import univ8.notemyday.dao.DayDAO;
+import univ8.notemyday.model.CriteriaDay;
+import univ8.notemyday.model.Day;
 
 
 /**

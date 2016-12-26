@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package univ8.notemyday;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +14,10 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.List;
 
-import ka.ti.asma.univ8.notemyday.Activity.CriteriaDayActivity;
-import ka.ti.asma.univ8.notemyday.Activity.DetailHistoryActivity;
-import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
-import ka.ti.asma.univ8.notemyday.model.Day;
+import univ8.notemyday.Activity.CriteriaDayActivity;
+import univ8.notemyday.Activity.DetailHistoryActivity;
+import univ8.notemyday.model.CriteriaDay;
+import univ8.notemyday.model.Day;
 
 /**
  * Created by abdelmadjidchaibi on 21/12/2016.

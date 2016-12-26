@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.model;
+package univ8.notemyday.model;
 
 import android.content.ContentValues;
 
@@ -7,8 +7,8 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
-import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
-import ka.ti.asma.univ8.notemyday.dao.DBHelper;
+import univ8.notemyday.dao.CriteriaDayDAO;
+import univ8.notemyday.dao.DBHelper;
 
 /**
  * Created by Asma kouaouci on 18/12/2016.

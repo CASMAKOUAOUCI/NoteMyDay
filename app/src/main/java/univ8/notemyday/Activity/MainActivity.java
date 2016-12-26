@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.Activity;
+package univ8.notemyday.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,17 +12,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import ka.ti.asma.univ8.notemyday.Fragments.AproposFragment;
-import ka.ti.asma.univ8.notemyday.Fragments.DaysHistoryFragment;
-import ka.ti.asma.univ8.notemyday.Fragments.GrapheFragment;
-import ka.ti.asma.univ8.notemyday.Fragments.MyDayFragment;
-import ka.ti.asma.univ8.notemyday.R;
+import univ8.notemyday.Fragments.AproposFragment;
+import univ8.notemyday.Fragments.DaysHistoryFragment;
+import univ8.notemyday.Fragments.GrapheFragment;
+import univ8.notemyday.Fragments.MyDayFragment;
+import univ8.notemyday.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
-    private boolean firstTime = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Noter ma journée");
 
         if (savedInstanceState == null) {
             // Initialisation du fragment manager
@@ -81,14 +79,14 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        createFragment(id);
+        afficherFragment(id);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void createFragment(int id) {
+    private void afficherFragment(int id) {
 
         fragmentManager = getSupportFragmentManager();
 

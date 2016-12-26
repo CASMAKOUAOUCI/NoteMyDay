@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.model;
+package univ8.notemyday.model;
 
 import android.util.Log;
 

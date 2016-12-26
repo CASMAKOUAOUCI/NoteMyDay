@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package univ8.notemyday;
 
 import org.junit.Test;
 

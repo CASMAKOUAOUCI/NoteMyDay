@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.Fragments;
+package univ8.notemyday.Fragments;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import ka.ti.asma.univ8.notemyday.R;
+import univ8.notemyday.R;
 
 public class AproposFragment extends Fragment {
 

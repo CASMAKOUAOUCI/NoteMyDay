@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.Activity;
+package univ8.notemyday.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.List;
 
-import ka.ti.asma.univ8.notemyday.R;
-import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
-import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
+import univ8.notemyday.R;
+import univ8.notemyday.dao.CriteriaDayDAO;
+import univ8.notemyday.model.CriteriaDay;
 
 public class CriteriaDayActivity extends AppCompatActivity implements Serializable{
 

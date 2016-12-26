@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.Fragments;
+package univ8.notemyday.Fragments;
 
 
 import android.os.Bundle;
@@ -13,11 +13,11 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.List;
 
-import ka.ti.asma.univ8.notemyday.R;
-import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
-import ka.ti.asma.univ8.notemyday.dao.DayDAO;
-import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
-import ka.ti.asma.univ8.notemyday.model.Day;
+import univ8.notemyday.R;
+import univ8.notemyday.dao.CriteriaDayDAO;
+import univ8.notemyday.dao.DayDAO;
+import univ8.notemyday.model.CriteriaDay;
+import univ8.notemyday.model.Day;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,12 +43,12 @@ public class GrapheFragment extends Fragment {
         List<DataPoint> listDataPoint = null;
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
         });
+        getActivity().setTitle("Historique Graphe");
 
         dayDAO = new DayDAO(this.getContext());
         criteriaDayDAO = new CriteriaDayDAO(this.getContext());
 
         dayList = dayDAO.getAllDays();
-        getActivity().setTitle("Historique Graphe");
         int size = dayList.size();
         System.out.print("day.getRating()"+dayList);
 

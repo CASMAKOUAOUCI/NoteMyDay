@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday.dao;
+package univ8.notemyday.dao;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -9,8 +9,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
-import ka.ti.asma.univ8.notemyday.model.Day;
+import univ8.notemyday.model.CriteriaDay;
+import univ8.notemyday.model.Day;
 
 /**
  * Created by abdelmadjidchaibi on 20/12/2016.
