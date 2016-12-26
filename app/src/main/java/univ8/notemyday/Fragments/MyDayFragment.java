@@ -44,6 +44,8 @@ public class MyDayFragment extends ListFragment {
         final View view = inflater.inflate(R.layout.fragment_myday, container, false);
         this.getActivity().setTitle("Ma Journée");
 
+
+
         criteriaDayDAO = new CriteriaDayDAO(this.getContext());
         dayDAO = new DayDAO(this.getContext());
         Date date = new Date();
@@ -63,12 +65,6 @@ public class MyDayFragment extends ListFragment {
             addDefaultCriteriaDay();
         }
 
-        // créer l'adapteur pour la listeView
-        ArrayAdapter<CriteriaDay> listViewAdapter =  new ArrayAdapter<CriteriaDay>(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                criteriasDayList
-        );
         List<Object> criteriaListObject = (List<Object>)(List<?>) criteriasDayList;
 
         setListAdapter(new CustomAdapter(this.getActivity(), criteriaListObject,1,this));

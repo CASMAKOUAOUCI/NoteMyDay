@@ -20,7 +20,7 @@ import univ8.notemyday.model.CriteriaDay;
 import univ8.notemyday.model.Day;
 
 /**
- * Created by abdelmadjidchaibi on 21/12/2016.
+ * Created by Asma  on 21/12/2016.
  */
 
 public class CustomAdapter extends BaseAdapter {

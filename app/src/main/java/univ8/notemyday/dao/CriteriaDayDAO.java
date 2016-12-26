@@ -13,7 +13,7 @@ import univ8.notemyday.model.CriteriaDay;
 import univ8.notemyday.model.Day;
 
 /**
- * Created by abdelmadjidchaibi on 20/12/2016.
+ * Created by Asma  on 20/12/2016.
  */
 
 public class CriteriaDayDAO {
