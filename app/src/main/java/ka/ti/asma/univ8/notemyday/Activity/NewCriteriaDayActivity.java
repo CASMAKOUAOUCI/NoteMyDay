@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.Date;
 
+import ka.ti.asma.univ8.notemyday.R;
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
 

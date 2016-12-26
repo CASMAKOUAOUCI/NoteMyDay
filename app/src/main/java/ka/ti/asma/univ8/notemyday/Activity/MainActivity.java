@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import ka.ti.asma.univ8.notemyday.Fragments.AproposFragment;
 import ka.ti.asma.univ8.notemyday.Fragments.DaysHistoryFragment;
 import ka.ti.asma.univ8.notemyday.Fragments.GrapheFragment;
 import ka.ti.asma.univ8.notemyday.Fragments.MyDayFragment;
+import ka.ti.asma.univ8.notemyday.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

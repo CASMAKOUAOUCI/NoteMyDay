@@ -1,4 +1,4 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.RatingBar;
 
 import java.util.List;
 
+import ka.ti.asma.univ8.notemyday.R;
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
 import ka.ti.asma.univ8.notemyday.model.Day;

@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 import ka.ti.asma.univ8.notemyday.CustomAdapter;
-import ka.ti.asma.univ8.notemyday.NewCriteriaDayActivity;
+import ka.ti.asma.univ8.notemyday.Activity.NewCriteriaDayActivity;
 import ka.ti.asma.univ8.notemyday.R;
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.dao.DayDAO;

@@ -1,7 +1,5 @@
-package ka.ti.asma.univ8.notemyday;
+package ka.ti.asma.univ8.notemyday.Activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +11,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
+import ka.ti.asma.univ8.notemyday.R;
 import ka.ti.asma.univ8.notemyday.dao.CriteriaDayDAO;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
 
@@ -52,13 +51,19 @@ public class CriteriaDayActivity extends AppCompatActivity implements Serializab
             }
         });
 
+        List<CriteriaDay> list = criteriaDayDAO.getCriteriaDayOfDay(criteriaDay.getDateString());
+
         Button deleteButton = (Button)findViewById(R.id.activity_new_criteria_day_deleteButton);
+        if (list.size()>1) deleteButton.setEnabled(true);
+        else deleteButton.setEnabled(false);
+
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 criteriaDayDAO = new CriteriaDayDAO(getBaseContext());
                 deleteCriteriaDay();
                 finishActivityCD();
+
             }
         });
     }

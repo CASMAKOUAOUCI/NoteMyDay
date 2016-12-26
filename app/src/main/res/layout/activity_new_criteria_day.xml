@@ -4,7 +4,7 @@
     android:id="@+id/activity_new_criteria_day"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ka.ti.asma.univ8.notemyday.NewCriteriaDayActivity">
+    tools:context="ka.ti.asma.univ8.notemyday.Activity.NewCriteriaDayActivity">
 
     <EditText
         android:layout_width="match_parent"

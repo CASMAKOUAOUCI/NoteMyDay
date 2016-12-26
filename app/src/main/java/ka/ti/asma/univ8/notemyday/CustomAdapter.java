@@ -14,6 +14,8 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.List;
 
+import ka.ti.asma.univ8.notemyday.Activity.CriteriaDayActivity;
+import ka.ti.asma.univ8.notemyday.Activity.DetailHistoryActivity;
 import ka.ti.asma.univ8.notemyday.model.CriteriaDay;
 import ka.ti.asma.univ8.notemyday.model.Day;
 
@@ -32,7 +34,7 @@ public class CustomAdapter extends BaseAdapter {
     public CustomAdapter(FragmentActivity mainActivity, List<Object> prgmNameList, int type, ListFragment listFragment) {
         // TODO Auto-generated constructor stub
         typeList = type;
-        result=prgmNameList;
+        result = prgmNameList;
         context = mainActivity;
         fragment =  listFragment;
         inflater = ( LayoutInflater )context.
@@ -66,7 +68,7 @@ public class CustomAdapter extends BaseAdapter {
         // TODO Auto-generated method stub
         Holder holder=new Holder();
         View rowView;
-        rowView = inflater.inflate(R.layout.history_list, null);
+        rowView = inflater.inflate(R.layout.custom_adapter, null);
         holder.tv=(TextView) rowView.findViewById(R.id.textView1);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
 
