@@ -40,7 +40,6 @@ public class GrapheFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_graphe, container, false);
         GraphView graph = (GraphView) view.findViewById(R.id.graph);
-        List<DataPoint> listDataPoint = null;
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
         });
         getActivity().setTitle("Historique Graphe");
@@ -50,7 +49,6 @@ public class GrapheFragment extends Fragment {
 
         dayList = dayDAO.getAllDays();
         int size = dayList.size();
-        System.out.print("day.getRating()"+dayList);
 
         for (int i = 0; i < size ; i++) {
             Day day = dayList.get(i);
