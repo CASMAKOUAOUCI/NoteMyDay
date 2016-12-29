@@ -21,6 +21,8 @@
         android:text="TextView"
         android:layout_weight="0.81"
         android:textStyle="bold"
-        android:textColor="#233f9b"/>
+        android:textColor="#27338b">
+
+    </TextView>
 
 </LinearLayout> 

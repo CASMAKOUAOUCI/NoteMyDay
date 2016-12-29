@@ -8,7 +8,8 @@
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="401dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+       />
 
     <RatingBar
         android:layout_width="wrap_content"
