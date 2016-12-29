@@ -27,7 +27,7 @@ public class SplashscreenActivity extends Activity {
                         startActivity(new Intent(SplashscreenActivity.this, MainActivity.class));
                         finish();
                     }
-                }, secondsDelayed * 5000);
+                }, secondsDelayed * 6000);
 
                 splashLoaded = true;
             }
