@@ -3,5 +3,8 @@
     <color name="colorPrimary">#ff75c1</color>
     <color name="colorPrimaryDark">#ff75c1</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorBackgroundFragment">#ffffff</color><!-- Ajouter une couleur pour le backgroud des fragments-->
+    <color name="colorBackgroundFragment">#ffffff</color>
+
+    <color name="black_overlay">#66000000
+    </color><!-- Ajouter une couleur pour le backgroud des fragments-->
 </resources>
