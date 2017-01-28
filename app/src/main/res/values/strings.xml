@@ -11,4 +11,7 @@
     <string name="title_activity_apropos">À PROPOS</string>
 
     <string name="title_activity_splashscreen">Ma Journée</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

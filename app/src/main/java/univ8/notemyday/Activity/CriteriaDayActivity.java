@@ -10,14 +10,13 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import java.io.Serializable;
 import java.util.List;
 
 import univ8.notemyday.R;
 import univ8.notemyday.dao.CriteriaDayDAO;
 import univ8.notemyday.model.CriteriaDay;
 
-public class CriteriaDayActivity extends AppCompatActivity implements Serializable{
+public class CriteriaDayActivity extends AppCompatActivity{
 
     CriteriaDay criteriaDay;
     private CriteriaDayDAO criteriaDayDAO;
